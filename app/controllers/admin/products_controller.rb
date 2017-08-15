@@ -16,13 +16,13 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
     @brands = Brand.all.map { |b| [b.name, b.id] } #这一行为加入的代码
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.user = current_user
     @product.category_id = params[:category_id]
     @product.brand_id = params[:brand_id]
@@ -44,7 +44,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.category_id = params[:category_id]
     @product.brand_id = params[:brand_id]
     # 更新多张图片的判断
@@ -68,7 +68,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.destroy
     redirect_to admin_products_path, alert: "删除商品成功"
   end
@@ -76,6 +76,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :stock, :can_sell, :new_product, :promotive_product, :image, :category_id, :brand_id, :photos, :pictures)
+    params.require(:product).permit(:name, :description, :price, :stock, :can_sell, :new_product, :promotive_product, :image, :category_id, :brand_id, :photos, :pictures, :friendly_id)
   end
 end

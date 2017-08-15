@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @suggests_show = Product.selling.random4 #选出4个随机商品
     @photos = @product.photos.all
     @pictures = @product.pictures.all
@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
       flash[:notice] = "你已成功将 #{@product.name} 加入购物车"
@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
 
   #立即购买的method，目前是立即购买的话会删除之前购物车中所有商品，这个后期还得再修改
   def buy_now
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     current_cart.cart_items.delete_all
     current_cart.add_product_to_cart(@product)
     redirect_to carts_path
@@ -82,7 +82,7 @@ class ProductsController < ApplicationController
 
   # 收藏商品的method
   def add_to_favorite
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.fans << current_user
     @product.save
     # notice:"成功加入收藏!" #目前还不知道不刷新页面的情况下怎么更新flash
@@ -93,7 +93,7 @@ class ProductsController < ApplicationController
 
   # 取消收藏的method
   def cancel_favorite
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.fans.delete(current_user)
     @product.save
     # alert:"成功取消收藏!"
@@ -104,7 +104,7 @@ class ProductsController < ApplicationController
 
   # 增加点赞功能
   def upvote
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.upvote_by current_user
     # redirect_to :back
     render "like"

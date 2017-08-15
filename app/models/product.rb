@@ -16,6 +16,11 @@
 #  brand_id          :integer
 #  new_product       :boolean          default(FALSE)
 #  promotive_product :boolean          default(FALSE)
+#  friendly_id       :string
+#
+# Indexes
+#
+#  index_products_on_friendly_id  (friendly_id) UNIQUE
 #
 
 class Product < ApplicationRecord
@@ -26,6 +31,11 @@ class Product < ApplicationRecord
   validates :stock, presence: { message: "請入庫存數量" }, numericality: { greater_than_or_equal: 0 }
   validates :category_id, presence: { message: "請選擇商品分類" }
   validates :brand_id, presence: { message: "請選擇商品品牌" }
+  validates_presence_of :name, :friendly_id
+  validates_uniqueness_of :friendly_id
+  validates_format_of :friendly_id, :with => /\A[a-z0-9\-]+\z/
+
+  before_validation :generate_friendly_id, :on => :create
 
   mount_uploader :image, ImageUploader
   belongs_to :user
@@ -53,6 +63,10 @@ class Product < ApplicationRecord
 
   acts_as_votable  #点赞功能
 
+  def to_param
+    self.friendly_id
+  end
+
   scope :selling, -> { where(can_sell: true) } # 选出正在销售中的商品
   scope :newest, -> { where(new_product: true, can_sell: true) } # 选出最新的商品
   scope :promotive, -> { where(promotive_product: true,can_sell: true) } # 选出活动的商品
@@ -61,4 +75,9 @@ class Product < ApplicationRecord
   scope :random8, -> { limit(8).order('RANDOM()') } #随机选出8个样品
   scope :random4, -> { limit(4).order('RANDOM()') } #随机选出4个样品
 
+  protected
+
+   def generate_friendly_id
+     self.friendly_id ||= SecureRandom.uuid
+   end
 end

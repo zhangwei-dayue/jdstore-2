@@ -56,7 +56,6 @@ gem 'figaro' #管理机密信息，密钥
 gem "intercom-rails" #客服系统
 gem 'airbrake', '~> 5.4' #heroku上debug的gem
 gem 'social-share-button' #社群分享鈕
-gem 'rails-erd'
 
 
 

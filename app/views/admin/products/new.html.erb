@@ -20,6 +20,11 @@
         <%= f.label :商品详情区域图片 %><br>
         <%= f.file_field :avatar, :multiple => true, name: "pictures[avatar][]" %>
       </div>
+      <div class="form-group">
+        <%= f.label :friendly_id %>
+        <%= f.text_field :friendly_id, :required => true, :class => "form-control" %>
+        <p class="help-block">限小写英数字及横线，将作为网址的一部分</p>
+      </div>
       <%= select_tag(:brand_id, options_for_select(@brands), :prompt => "品牌") %>
       <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %> <!-- 新增类别 -->
       <%= f.input :can_sell, :label => "上线", as: :radio_buttons, collection: [['上线', true], ['隐藏', false]], required: true %>

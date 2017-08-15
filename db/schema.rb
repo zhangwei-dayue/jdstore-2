@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607223208) do
+ActiveRecord::Schema.define(version: 20170815223946) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -108,6 +108,8 @@ ActiveRecord::Schema.define(version: 20170607223208) do
     t.integer  "brand_id"
     t.boolean  "new_product",       default: false
     t.boolean  "promotive_product", default: false
+    t.string   "friendly_id"
+    t.index ["friendly_id"], name: "index_products_on_friendly_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
