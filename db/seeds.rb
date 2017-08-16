@@ -29,6 +29,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1ffug7u3qq1j30b40gomxq.jpg"),
   category_id: 1,
+  user_id: 1,
   can_sell: true
   )
 
@@ -40,6 +41,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1ffug88zz8qj30m80eu3z3.jpg"),
   category_id: 2,
+  user_id: 1,
   can_sell: true
   )
 
@@ -51,6 +53,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1ffug8g1srej30m80et0tl.jpg"),
   category_id: 3,
+  user_id: 1,
   can_sell: true
   )
 
@@ -62,6 +65,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffug8o7gltj30m80eujsv.jpg"),
   category_id: 4,
+  user_id: 1,
   can_sell: true
   )
 
@@ -73,6 +77,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1ffug8zwccdj30ci0gogm0.jpg"),
   category_id: 1,
+  user_id: 1,
   can_sell: true
   )
 
@@ -85,6 +90,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffug97f5kvj30bo0goq34.jpg"),
   category_id: 2,
+  user_id: 1,
   can_sell: true
   )
 
@@ -96,6 +102,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1ffug9g55qbj30bj0go0sy.jpg"),
   category_id: 3,
+  user_id: 1,
   can_sell: true
   )
 
@@ -107,6 +114,7 @@ Product.create!(
   stock: 5,
   image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1ffug9q8z40j30ci0btglv.jpg"),
   category_id: 1,
+  user_id: 1,
   can_sell: true
   )
 
@@ -125,6 +133,7 @@ Product.create!(
   image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1ffugbfsausj30m80euaaw.jpg"),
 
   category_id: 2,
+  user_id: 1,
   can_sell: true
   )
 
@@ -143,6 +152,7 @@ Product.create!(
   image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1ffugbrqtq2j30m80goab4.jpg"),
 
   category_id: 1,
+  user_id: 1,
   can_sell: true
   )
 
@@ -161,6 +171,7 @@ Product.create!(
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffugc1uw71j30fx0goab3.jpg"),
 
   category_id: 3,
+  user_id: 1,
   can_sell: true
   )
 
@@ -181,6 +192,7 @@ Product.create!(
   image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1ffugceazrsj30f20cq75a.jpg"),
 
   category_id: 4,
+  user_id: 1,
   can_sell: true
   )
 
@@ -199,6 +211,7 @@ Product.create!(
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffugcmit59j30m80ettbf.jpg"),
 
   category_id: 1,
+  user_id: 1,
   can_sell: true
   )
 
@@ -217,6 +230,7 @@ Product.create!(
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffugcxl8vdj30m80etgoa.jpg"),
 
   category_id: 3,
+  user_id: 1,
   can_sell: true
   )
 
@@ -235,6 +249,7 @@ Product.create!(
   image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1ffugd6h2nrj30m80etjv3.jpg"),
 
   category_id: 4,
+  user_id: 1,
   can_sell: true
   )
 
@@ -253,6 +268,7 @@ Product.create!(
   image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1ffugdfvofvj30b80c7407.jpg"),
 
   category_id: 1,
+  user_id: 1,
   can_sell: true
   )
 
@@ -271,6 +287,7 @@ Product.create!(
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffugdq0w1aj30ab0avjsp.jpg"),
 
   category_id: 3,
+  user_id: 1,
   can_sell: true
   )
 
@@ -289,5 +306,6 @@ Product.create!(
   image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1ffuge0fdx2j30ci0an3za.jpg"),
 
   category_id: 4,
+  user_id: 1,
   can_sell: true
   )
