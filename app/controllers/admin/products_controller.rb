@@ -22,7 +22,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.find_by_friendly_id!(params[:id])
+    @product = Product.new(product_params)
     @product.user = current_user
     @product.category_id = params[:category_id]
     @product.brand_id = params[:brand_id]
