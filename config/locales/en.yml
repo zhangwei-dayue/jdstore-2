@@ -19,5 +19,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+"en":
+  hello: Hello world
+  home: Home
+  all_products: All Products
+  new_products: New Products
+  promotive_products: Promotion
+  sequence: Sequence
+  table: Table
+  chair: Chair
+  stool: Stool
+  sofa: Sofa
+  latest: LATEST
+  2017_summer: 2017 SUMMER
+  new: New
+  stock: Sales
+  price: Price

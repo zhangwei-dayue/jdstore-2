@@ -84,6 +84,8 @@
               <li><%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
+          <li><%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
+          <li><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></li>
         <% end %>
       </ul>
     </div>

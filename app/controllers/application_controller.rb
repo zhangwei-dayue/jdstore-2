@@ -1,10 +1,19 @@
 class ApplicationController < ActionController::Base
   before_action :store_current_location, :unless => :devise_controller?   # 用户登陆后返回登陆前页面
+  before_action :set_locale
   protect_from_forgery with: :exception
   def require_is_admin
     if !current_user.admin?
       redirect_to root_path, alert: "你没有权限执行相关操作"
     end
+  end
+
+  def set_locale
+    if params[:locale] && I18n.available_locales.include?( params[:locale].to_sym )
+      session[:locale] = params[:locale]
+    end
+
+    I18n.locale = session[:locale] || I18n.default_locale
   end
 
   helper_method :current_cart

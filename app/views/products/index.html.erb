@@ -14,8 +14,8 @@
 <% else %>
   <!-- 所處位置導航列開始 -->
   <ul class="breadcrumb">
-    <li><a href="/">首页</a></li>
-    <li class="active">全品项商品首页</li>
+    <li><a href="/"><%= t("home") %></a></li>
+    <li class="active"><%= t("all_products") %></li>
   </ul>
   <!-- 所處位置導航列結束 -->
   <!-- 活動廣告區域開始 -->
@@ -25,18 +25,18 @@
   <div id="products_new">
     <!-- 所處位置導航列開始 -->
     <ul class="breadcrumb">
-      <li><a href="/products">最新商品</a></li>
-      <li><a href="/products?category=椅子">椅子</a></li>
-      <li><a href="/products?category=桌子">桌子</a></li><br />
-      <li><a href="/products?category=凳子">凳子</a></li>
-      <li><a href="/products?category=沙发">沙发</a></li>
+      <li><a href="/products"><%= t("new_products") %></a></li>
+      <li><a href="/products?category=椅子"><%= t("chair") %></a></li>
+      <li><a href="/products?category=桌子"><%= t("table") %></a></li><br />
+      <li><a href="/products?category=凳子"><%= t("stool") %></a></li>
+      <li><a href="/products?category=沙发"><%= t("sofa") %></a></li>
     </ul>
     <!-- 所處位置導航列結束 -->
     <div class="row">
       <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
         <div class="order clearfix", style="color: #ffffff;
             background-color: #439a46;">
-          <p class="title">最新到货</p>
+          <p class="title"><%= t("latest") %></p>
         </div>
       </div>
     </div>
@@ -58,18 +58,18 @@
   <div id="products_promotive">
     <!-- 所處位置導航列開始 -->
     <ul class="breadcrumb">
-      <li><a href="/products">活动商品</a></li>
-      <li><a href="/products?category=椅子">椅子</a></li>
-      <li><a href="/products?category=桌子">桌子</a></li><br />
-      <li><a href="/products?category=凳子">凳子</a></li>
-      <li><a href="/products?category=沙发">沙发</a></li>
+      <li><a href="/products"><%= t("promotive_products") %></a></li>
+      <li><a href="/products?category=椅子"><%= t("chair") %></a></li>
+      <li><a href="/products?category=桌子"><%= t("table") %></a></li><br />
+      <li><a href="/products?category=凳子"><%= t("stool") %></a></li>
+      <li><a href="/products?category=沙发"><%= t("sofa") %></a></li>
     </ul>
     <!-- 所處位置導航列結束 -->
     <div class="row">
       <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
         <div class="order clearfix", style="color: #ffffff;
             background-color: #ff9800;">
-          <p class="title">2017初夏轻色</p>
+          <p class="title"><%= t("2017_summer") %></p>
         </div>
       </div>
     </div>
@@ -90,11 +90,11 @@
 
   <!-- 所處位置導航列開始 -->
   <ul class="breadcrumb">
-    <li><a href="/products">全品项商品</a></li>
-    <li><a href="/products?category=椅子">椅子</a></li>
-    <li><a href="/products?category=桌子">桌子</a></li>
-    <li><a href="/products?category=凳子">凳子</a></li>
-    <li><a href="/products?category=沙发">沙发</a></li>
+    <li><a href="/products"><%= t("all_products") %></a></li>
+    <li><a href="/products?category=椅子"><%= t("chair") %></a></li>
+    <li><a href="/products?category=桌子"><%= t("table") %></a></li>
+    <li><a href="/products?category=凳子"><%= t("stool") %></a></li>
+    <li><a href="/products?category=沙发"><%= t("sofa") %></a></li>
   </ul>
   <!-- 所處位置導航列結束 -->
 <% end %>
@@ -105,11 +105,11 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
     <div class="order clearfix">
-      <p class="title">商品排序 | </p>
+      <p class="title"><%= t("sequence") %> | </p>
       <ul class="orderList">
-        <li class="orderList-orderItem <%= 'orderList-activeItem' if !params[:order] %>"><%= link_to("新品", products_path) %></li>
-        <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_stock' %>"><%= link_to("销量", products_path(:order => "by_product_stock")) %></li>
-        <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>"><%= link_to("价格", products_path(:order => "by_product_price")) %></li>
+        <li class="orderList-orderItem <%= 'orderList-activeItem' if !params[:order] %>"><a href="/products"><%= t("new") %></a> </li>
+        <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_stock' %>"><a href="/products?order=by_product_stock"><%= t("stock") %></a> </li>
+        <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>"><a href="/products?order=by_product_price"><%= t("price") %></a></li>
       </ul>
     </div>
   </div>
