@@ -21,6 +21,46 @@
 
 # Initialize Product
 
+Category.create!(
+  name: "椅子"
+  )
+
+Category.create!(
+  name: "桌子"
+  )
+
+Category.create!(
+  name: "凳子"
+  )
+
+Category.create!(
+  name: "沙发"
+  )
+
+Brand.create!(
+  name: "HAY"
+  )
+
+Brand.create!(
+  name: "GUBI"
+  )
+
+Brand.create!(
+  name: "MENU"
+  )
+
+Brand.create!(
+  name: "muuto"
+  )
+
+Brand.create!(
+  name: "STUA"
+  )
+
+Brand.create!(
+  name: "ferm living"
+  )
+
 Product.create!(
   brand_id: 1,
   name: "HAY- J104单椅",

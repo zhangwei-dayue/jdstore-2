@@ -6,6 +6,7 @@
         <tr>
           <th>商品图</th>
           <th>商品名</th>
+          <th>上线时间</th>
           <th>价格</th>
           <th>库存</th>
           <th>管理</th>
@@ -24,6 +25,7 @@
               <% end %>
             </td>
             <td style="text-align: left;"><%= link_to(product.name, product_path(product)) %></td>
+            <th><%= product.created_at.to_s %></th>
             <td><%= product.price %></td>
             <td><%= product.stock %></td>
             <td>
