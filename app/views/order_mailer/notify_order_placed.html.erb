@@ -73,3 +73,7 @@
     </div>
   </div>
 </div>
+
+<% content_for :action do %>
+  <%= link_to "订单链接", order_url(@order.token), :class => "btn-primary", :itemprop => "url" %>
+<% end %>
