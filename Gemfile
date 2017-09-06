@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
   gem 'byebug', platform: :mri
   gem 'sqlite3'
 end
@@ -59,6 +61,7 @@ gem 'social-share-button' #社群分享鈕
 gem 'rails-i18n' #多语言切换
 gem 'devise-i18n' #devise翻译档
 gem 'premailer-rails' #发送邮件时转换inline CSS
+gem 'mysql2'
 
 
 

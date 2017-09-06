@@ -31,11 +31,11 @@ class Admin::ProductsController < ApplicationController
         params[:photos]['avatar'].each do |a|
           @photo = @product.photos.create(:avatar => a)
         end
+      end
       if params[:pictures] != nil
         params[:pictures]['avatar'].each do |a|
           @picture = @product.pictures.create(:avatar => a)
         end
-      end
       end
       redirect_to admin_products_path, alert: "添加商品成功"
     else

@@ -15,6 +15,7 @@
         <p class="search-info-title", style="margin-bottom: 0px;">没有找到「<%= @query_string %>」的商品信息，请输入关键字搜索。</p>
       <% else %>
         <p class="search-info-title", style="margin-bottom: 0px;"> 有关「<%= @query_string %>」的商品信息。</p>
+      <% end %>
     </div>
     <!-- 搜索結果提示結束 -->
     <div class="order clearfix">
@@ -38,7 +39,7 @@
       <div class="text-center">
         <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
       </div>
-      <% end %>
+
     </div>
   </div>
 </div>
